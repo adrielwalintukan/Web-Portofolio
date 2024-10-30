@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+@media (max-width: 995px) {
+    nav {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 7rem 9% 5rem; /* Menambahkan padding atas untuk memberikan jarak dari header */
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem; /* Menambahkan jarak antara konten dan header */
+    padding: 2rem;
+    background-color: rgba(100, 97, 97, 0.7); /* Warna latar belakang dengan transparansi */
+    border-radius: 10px; /* Membuat sudut kontainer menjadi membulat */
+}
+
+.profile-img-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 0rem; /* Mengurangi jarak antara gambar dan ikon sosial media */
+}
+
+.profile-img-slider-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px; /* Menentukan lebar maksimum kontainer slider */
+}
+
+.profile-img-slider {
+    width: 48%; /* Menentukan lebar slider untuk kiri dan kanan */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px; /* Menjadikan sudut gambar membulat */
+    height: 500px; /* Mengatur tinggi gambar */
+}
+
+.left-slider {
+    margin-right: 1rem; /* Jarak antara slider kiri dan kanan */
+}
+
+.right-slider {
+    margin-left: 1rem; /* Jarak antara slider kiri dan kanan */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Menjadikan sudut gambar membulat */
+}
+
+/* Navigation arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 2; /* Menetapkan z-index lebih tinggi untuk memastikan tombol panah tetap di atas gambar */
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: #5a4d4d;
+    color: black;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem; /* Mengatur jarak antara ikon sosial media dan teks */
+}
+
+.social-icons a {
+    font-size: 3rem;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+.profile-info {
+    max-width: 100%;
+    font-size: 2rem;
+    text-align: center; /* Center text alignment */
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan di belakang teks */
+    border-radius: 10px; /* Membuat sudut kontainer menjadi membulat */
+    margin-top: 1rem; /* Mengurangi jarak antara teks dan logo sosial media */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-info {
+        max-width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .profile-img-social {
+        max-width: 100%;
+    }
+
+    .profile-img-slider-container {
+        flex-direction: column;
+    }
+
+    .left-slider,
+    .right-slider {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-img-slider {
+        max-width: 250px;
+        height: 200px; /* Mengurangi tinggi gambar pada layar kecil */
+    }
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+    .profile-info {
+        font-size: 1.4rem;
+    }
+}
